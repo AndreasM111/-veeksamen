@@ -1,4 +1,4 @@
-/* Nullstill marger */
+/* Grunninnstillinger */
 * {
   margin: 0;
   padding: 0;
@@ -7,24 +7,27 @@
 
 body {
   font-family: Arial, sans-serif;
+  line-height: 1.6;
   color: #333;
-  /* Disse tre linjene under holder footeren nede */
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Container som samler innholdet på midten */
 .container {
-  width: 1100px;
-  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* Navigasjon */
 nav {
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 20px 0;
+  height: 90px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
 }
 
 nav .container {
@@ -34,7 +37,7 @@ nav .container {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
 }
 
@@ -45,6 +48,7 @@ nav .container {
 nav ul {
   display: flex;
   list-style: none;
+  align-items: center; /* Sørger for at knappen ligger på linje med teksten */
 }
 
 nav li {
@@ -54,66 +58,93 @@ nav li {
 nav a {
   text-decoration: none;
   color: #333;
+  font-weight: 500;
+}
+
+/* Styling av Logg inn-knappen i navbaren */
+.login-knapp {
+  border: 2px solid #0056b3;
+  padding: 8px 20px;
+  border-radius: 5px;
+  color: #0056b3;
+  transition: 0.3s;
+}
+
+.login-knapp:hover {
+  background-color: #0056b3;
+  color: #fff;
 }
 
 /* Forsiden (Hero) */
 .hero {
-  background-color: #f4f4f4;
-  /* flex: 1 gjør at hero-seksjonen tar opp all ledig plass */
   flex: 1;
+  background-color: #f4f7f6;
   display: flex;
   align-items: center;
+  padding: 100px 0;
 }
 
 .hero-tekst {
-  width: 700px;
+  max-width: 700px;
 }
 
 .hero-tekst h1 {
-  font-size: 40px;
-  margin-bottom: 20px;
+  font-size: 52px;
+  margin-bottom: 25px;
+  line-height: 1.1;
 }
 
 .hero-tekst p {
-  font-size: 18px;
-  margin-bottom: 30px;
+  font-size: 22px;
+  margin-bottom: 40px;
+  color: #444;
 }
 
+/* Hovedknapp */
 .knapp {
   display: inline-block;
-  background-color: #0056b3;
-  color: white;
-  padding: 15px 30px;
+  background: #0056b3;
+  color: #fff;
+  padding: 18px 35px;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-size: 18px;
 }
 
 /* Footer */
 footer {
-  background-color: #222;
+  background: #222;
   color: #fff;
-  padding: 30px 0;
+  padding: 30px 0 15px 0;
 }
 
 .footer-innhold {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
 }
 
-.footer-kontakt {
-  text-align: right;
+.footer-info h3 {
+  margin-bottom: 5px;
+  font-size: 18px;
 }
 
 .gdpr-info {
   font-size: 11px;
-  color: #aaa;
-  margin-top: 10px;
+  color: #888;
+  margin-top: 5px;
+  max-width: 450px;
+}
+
+.footer-kontakt p {
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
 .footer-bunn {
   text-align: center;
-  border-top: 1px solid #444;
-  padding-top: 20px;
-  font-size: 13px;
+  color: #666;
+  font-size: 12px;
 }

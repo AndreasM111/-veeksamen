@@ -4,9 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Digital Solutions</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="loginSide" class="side-meny">
+      <a href="javascript:void(0)" class="lukk-knapp" onclick="lukkLoggInn()"
+        >&times;</a
+      >
+      <div class="login-innhold">
+        <h2>Kundeinnlogging</h2>
+        <p>Logg inn for å få tilgang til dine tjenester.</p>
+        <form id="loginForm">
+          <input type="email" placeholder="E-post" required />
+          <input type="password" placeholder="Passord" required />
+          <button type="submit" class="knapp">Logg inn</button>
+        </form>
+      </div>
+    </div>
+
     <nav>
       <div class="container">
         <div class="logo">Digital <span>Solutions</span></div>
@@ -14,6 +30,14 @@
           <li><a href="#">Hjem</a></li>
           <li><a href="#">Tjenester</a></li>
           <li><a href="#">Kontakt</a></li>
+          <li>
+            <a
+              href="javascript:void(0)"
+              class="login-knapp"
+              onclick="aapneLoggInn()"
+              >Logg inn</a
+            >
+          </li>
         </ul>
       </div>
     </nav>
@@ -23,8 +47,8 @@
         <div class="hero-tekst">
           <h1>Profesjonelle webtjenester for din bedrift</h1>
           <p>
-            Vi hjelper småbedrifter med moderne funkjsoner til nettsider og
-            profesjonelt e-postoppsett. Enkelt, trygt og raskt.
+            Vi hjelper småbedrifter med moderne nettsider og profesjonelt
+            e-postoppsett. Enkelt, trygt og raskt.
           </p>
           <a href="#" class="knapp">Les mer om våre tjenester</a>
         </div>
@@ -52,5 +76,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
