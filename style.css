@@ -1,4 +1,4 @@
-/* Grunninnstillinger */
+/* Nullstill marger */
 * {
   margin: 0;
   padding: 0;
@@ -7,27 +7,33 @@
 
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
   color: #333;
-  background-color: #fff;
+  /* Disse tre linjene under holder footeren nede */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Container som holder innholdet samlet på midten */
+/* Container som samler innholdet på midten */
 .container {
-  width: 1000px;
-  margin: auto;
+  width: 1100px;
+  margin: 0 auto;
 }
 
 /* Navigasjon */
 nav {
-  height: 80px;
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  padding-top: 25px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  float: left;
   font-size: 24px;
   font-weight: bold;
 }
@@ -37,12 +43,11 @@ nav {
 }
 
 nav ul {
-  float: right;
+  display: flex;
   list-style: none;
 }
 
 nav li {
-  display: inline;
   margin-left: 30px;
 }
 
@@ -53,31 +58,31 @@ nav a {
 
 /* Forsiden (Hero) */
 .hero {
-  height: 600px;
-  background-color: #f4f7f6;
-  padding-top: 150px;
+  background-color: #f4f4f4;
+  /* flex: 1 gjør at hero-seksjonen tar opp all ledig plass */
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .hero-tekst {
-  width: 600px;
+  width: 700px;
 }
 
 .hero-tekst h1 {
-  font-size: 45px;
+  font-size: 40px;
   margin-bottom: 20px;
 }
 
 .hero-tekst p {
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 30px;
-  color: #555;
 }
 
-/* Knapp */
 .knapp {
   display: inline-block;
-  background: #0056b3;
-  color: #fff;
+  background-color: #0056b3;
+  color: white;
   padding: 15px 30px;
   text-decoration: none;
   border-radius: 5px;
@@ -85,29 +90,30 @@ nav a {
 
 /* Footer */
 footer {
-  background: #222;
+  background-color: #222;
   color: #fff;
-  padding: 50px 0 20px 0;
+  padding: 30px 0;
 }
 
 .footer-innhold {
-  overflow: hidden; /* Rydder opp etter float */
-  border-bottom: 1px solid #444;
-  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.footer-info {
-  float: left;
+.footer-kontakt {
+  text-align: right;
 }
 
-.footer-kontakt {
-  float: right;
-  text-align: right;
+.gdpr-info {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 10px;
 }
 
 .footer-bunn {
   text-align: center;
-  color: #777;
-  font-size: 14px;
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  font-size: 13px;
 }
