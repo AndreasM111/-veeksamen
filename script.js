@@ -36,7 +36,7 @@ if (loginForm) {
     } else {
       alert("Suksess! Du er nå logget inn.");
       console.log("Brukerdata:", data);
-      lukkLoggInn(); // Lukker menyen automatisk ved suksess
+      lukkLoggInn(); // lukker
     }
   });
 }
