@@ -1,42 +1,35 @@
-// 1. Sett inn nøklene dine med anførselstegn rundt
-const SUPABASE_URL = "https://tdyoicyhxpgauonfxuch.supabase.co";
+// 1. DINE NYE SUPABASE-NØKLER
+const SUPABASE_URL = "https://ydgngojuleapbtqhxztx.supabase.co";
 const SUPABASE_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRkeW9pY3loeHBnYXVvbmZ4dWNoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM2MjU1OTIsImV4cCI6MjA3OTIwMTU5Mn0.e-DLsnfboe6X1O5adDtPoT8Hfdr1KKLr0H2S6jkEF8M";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlkZ25nb2p1bGVhcGJ0cWh4enR4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg4MjU5MTcsImV4cCI6MjA4NDQwMTkxN30.4yM2LzMgZ2Imi4ArNgtABNF5fn9UW2F8YBsATB3QnI0";
 
-// 2. Bruk et annet navn på variabelen enn "supabase" (jeg bruker _supabase)
+// 2. Kobler til Supabase
 const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// 3. Funksjoner for å åpne og lukke menyen (viktig for at knappene skal virke)
-function aapneLoggInn() {
-  document.getElementById("loginSide").style.width = "400px";
-}
+// 3. Finner skjemaet
+const form = document.getElementById("kontaktSkjema");
 
-function lukkLoggInn() {
-  document.getElementById("loginSide").style.width = "0";
-}
-
-// 4. Finn skjemaet ved hjelp av ID-en vi lagde
-const loginForm = document.getElementById("loginForm");
-
-if (loginForm) {
-  loginForm.addEventListener("submit", async (e) => {
+if (form) {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault(); // Stopper siden fra å laste på nytt
 
-    const email = loginForm.querySelector('input[type="email"]').value;
-    const password = loginForm.querySelector('input[type="password"]').value;
+    const navn = document.getElementById("navn").value;
+    const epost = document.getElementById("epost").value;
+    const melding = document.getElementById("melding").value;
 
-    // Prøv å logge inn mot Supabase
-    const { data, error } = await _supabase.auth.signInWithPassword({
-      email: email,
-      password: password,
-    });
+    // Sender til Supabase
+    const { error } = await _supabase
+      .from("meldinger")
+      .insert({ navn: navn, epost: epost, melding: melding });
 
     if (error) {
-      alert("Feil ved innlogging: " + error.message);
+      console.error(error);
+      alert(
+        "Feil! Sjekk at tabellen heter 'meldinger' (små bokstaver) og at RLS er AV i Supabase.",
+      );
     } else {
-      alert("Suksess! Du er nå logget inn.");
-      console.log("Brukerdata:", data);
-      lukkLoggInn(); // lukker
+      alert("Melding sendt! Vi snakkes.");
+      form.reset(); // Tømmer feltene
     }
   });
 }

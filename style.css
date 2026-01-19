@@ -5,29 +5,36 @@
   box-sizing: border-box;
 }
 
+:root {
+  --hoved-blaa: #004a99;
+  --mork-graa: #222;
+  --lys-graa: #f8f9fa;
+  --tekst-farge: #333;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: var(--tekst-farge);
   background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
 }
 
 /* Navigasjon */
 nav {
-  height: 90px;
+  height: 80px;
   background: #fff;
   border-bottom: 1px solid #eee;
   display: flex;
   align-items: center;
+  position: sticky; /* Gjør at menyen henger med når du scroller */
+  top: 0;
+  z-index: 1000;
 }
 
 nav .container {
@@ -37,114 +44,240 @@ nav .container {
 }
 
 .logo {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: bold;
 }
 
 .logo span {
-  color: #0056b3;
+  color: var(--hoved-blaa);
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  align-items: center; /* Sørger for at knappen ligger på linje med teksten */
 }
 
 nav li {
-  margin-left: 30px;
+  margin-left: 25px;
 }
 
 nav a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  color: var(--tekst-farge);
+  font-weight: bold;
 }
 
-/* Styling av Logg inn-knappen i navbaren */
-.login-knapp {
-  border: 2px solid #0056b3;
-  padding: 8px 20px;
-  border-radius: 5px;
-  color: #0056b3;
-  transition: 0.3s;
-}
-
-.login-knapp:hover {
-  background-color: #0056b3;
-  color: #fff;
-}
-
-/* Forsiden (Hero) */
+/* Hero Seksjon */
 .hero {
-  flex: 1;
-  background-color: #f4f7f6;
-  display: flex;
-  align-items: center;
-  padding: 100px 0;
+  padding: 80px 0;
+  background-color: var(--lys-graa);
+  text-align: center;
 }
 
 .hero-tekst {
-  max-width: 700px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero-tekst h1 {
-  font-size: 52px;
-  margin-bottom: 25px;
+  font-size: 48px;
   line-height: 1.1;
+  margin-bottom: 20px;
 }
 
 .hero-tekst p {
-  font-size: 22px;
-  margin-bottom: 40px;
-  color: #444;
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #555;
 }
 
-/* Hovedknapp */
+.hero-buttons {
+  margin-top: 30px;
+}
+
+/* Banner med bilde og slagord */
+.banner-med-bilde {
+  background: url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80")
+    no-repeat center center/cover;
+  color: white;
+  padding: 80px 0;
+  position: relative;
+  text-align: center;
+}
+
+.banner-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.banner-overlay .container {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-overlay h2 {
+  font-size: 38px;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.banner-overlay p {
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+/* Knapper */
 .knapp {
   display: inline-block;
-  background: #0056b3;
+  background: var(--hoved-blaa);
   color: #fff;
-  padding: 18px 35px;
+  padding: 15px 30px;
   text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.knapp-lys {
+  background: #fff;
+  border: 2px solid var(--hoved-blaa);
+  color: var(--hoved-blaa);
+  margin-left: 10px;
+}
+
+/* Tjenester */
+.tjenester {
+  padding: 80px 0;
+}
+
+.seksjon-tittel {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tjeneste-grid {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.kort {
+  background: #fff;
+  padding: 30px;
+  border: 1px solid #ddd;
+  flex: 1;
+  text-align: center;
+}
+
+.kort .ikon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* Kontaktskjema styling */
+.kontakt-seksjon {
+  padding: 80px 0;
+  background-color: #f4f7f6;
+}
+
+#kontaktSkjema {
+  background: #fff;
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.skjema-rad {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+#kontaktSkjema input,
+#kontaktSkjema textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
   border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: 0.3s;
+}
+
+#kontaktSkjema input:focus,
+#kontaktSkjema textarea:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+#kontaktSkjema textarea {
+  resize: vertical;
+  margin-bottom: 20px;
+}
+
+#kontaktSkjema .knapp {
+  width: 100%;
+  border: none;
+  cursor: pointer;
   font-size: 18px;
 }
 
 /* Footer */
 footer {
-  background: #222;
+  background: var(--mork-graa);
   color: #fff;
-  padding: 30px 0 15px 0;
+  padding: 40px 0 20px 0;
 }
 
 .footer-innhold {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #444;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-}
-
-.footer-info h3 {
-  margin-bottom: 5px;
-  font-size: 18px;
+  padding-bottom: 20px;
 }
 
 .gdpr-info {
   font-size: 11px;
-  color: #888;
-  margin-top: 5px;
-  max-width: 450px;
-}
-
-.footer-kontakt p {
-  font-size: 14px;
-  margin-bottom: 5px;
+  color: #aaa;
+  margin-top: 10px;
 }
 
 .footer-bunn {
   text-align: center;
-  color: #665;
+  margin-top: 20px;
   font-size: 12px;
+  color: #888;
+}
+
+/* Mobil-tilpasning */
+@media (max-width: 768px) {
+  .hero-tekst h1 {
+    font-size: 32px;
+  }
+
+  .tjeneste-grid {
+    flex-direction: column;
+  }
+
+  .skjema-rad {
+    flex-direction: column;
+  }
+
+  .footer-innhold {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  nav ul {
+    display: none; /* Skjuler meny på liten skjerm for enkelhet */
+  }
 }
