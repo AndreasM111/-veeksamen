@@ -15,6 +15,7 @@
           <li><a href="#hjem">Hjem</a></li>
           <li><a href="#tjenester">Tjenester</a></li>
           <li><a href="#kontakt" class="nav-kontakt">Kontakt oss</a></li>
+          <li><a href="#" id="loginBtn">Logg inn</a></li>
         </ul>
       </div>
     </nav>
@@ -121,6 +122,30 @@
         </div>
       </div>
     </footer>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="lukk-modal">&times;</span>
+        <h2 id="modalTittel">Logg inn</h2>
+        <form id="loginSkjema">
+          <input type="email" id="loginEpost" placeholder="E-post" required />
+          <input
+            type="password"
+            id="loginPassord"
+            placeholder="Passord"
+            required
+          />
+          <button type="submit" class="knapp" id="submitBtn">Logg inn</button>
+        </form>
+
+        <p class="bytt-modus-tekst">
+          <span id="byttTekst">Har du ikke bruker?</span>
+          <a href="#" id="byttModusLenke">Registrer deg her</a>
+        </p>
+
+        <p id="loginMelding"></p>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
