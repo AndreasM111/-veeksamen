@@ -157,3 +157,39 @@ loginSkjema.addEventListener("submit", async (e) => {
 });
 
 sjekkStatus();
+
+// --------------------------------------------------------
+// KONTAKTSKJEMA LOGIKK (Send melding til Database)
+// --------------------------------------------------------
+const kontaktSkjema = document.getElementById("kontaktSkjema");
+
+if (kontaktSkjema) {
+  kontaktSkjema.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Hindrer siden i å laste på nytt
+
+    const navn = document.getElementById("navn").value;
+    const epostForm = document.getElementById("epost").value; // Endret variabelnavn for å ikke kræsje med login
+    const melding = document.getElementById("melding").value;
+    const knapp = kontaktSkjema.querySelector("button");
+
+    // Endre knapptekst for å vise at noe skjer
+    const orginalTekst = knapp.innerText;
+    knapp.innerText = "Sender...";
+
+    // Send til Supabase (Tabellnavn: 'meldinger')
+    const { error } = await sb.from("meldinger").insert({
+      navn: navn,
+      epost: epostForm,
+      melding: melding,
+    });
+
+    if (error) {
+      alert("Noe gikk galt: " + error.message);
+      knapp.innerText = orginalTekst;
+    } else {
+      alert("Takk! Meldingen din er sendt.");
+      kontaktSkjema.reset(); // Tømmer skjemaet
+      knapp.innerText = orginalTekst;
+    }
+  });
+}
