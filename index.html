@@ -1,33 +1,57 @@
 <!doctype html>
+<!-- HTML5 dokument -->
 <html lang="no">
+  <!-- Norsk språk (SEO + tilgjengelighet) -->
   <head>
+    <!-- Tegnsett for æ, ø, å -->
     <meta charset="UTF-8" />
+
+    <!-- Responsivt design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tittel i nettleser og søkemotor -->
     <title>Digital Solutions | Profesjonelle Webtjenester</title>
+
+    <!-- AI: Supabase bibliotek for autentisering (login/registrering) -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Ekstern CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
+    <!-- Navigasjonsmeny -->
     <nav>
       <div class="container">
+        <!-- Logo, span brukes for styling -->
         <div class="logo">Digital<span>Solutions</span></div>
+
+        <!-- Navigasjon på én side -->
         <ul>
           <li><a href="#hjem">Hjem</a></li>
           <li><a href="#tjenester">Tjenester</a></li>
           <li><a href="#kontakt" class="nav-kontakt">Kontakt oss</a></li>
+
+          <!-- Brukes av JS for å åpne login-modal -->
           <li><a href="#" id="loginBtn">Logg inn</a></li>
         </ul>
       </div>
     </nav>
 
+    <!-- Hero / hovedseksjon -->
     <header id="hjem" class="hero">
       <div class="container">
         <div class="hero-tekst">
+          <!-- Hovedoverskrift -->
           <h1>Profesjonelle webtjenester for din bedrift</h1>
+
+          <!-- Kort verdiforslag -->
           <p>
             Vi bygger moderne nettsider og setter opp profesjonelle
             e-postløsninger som hjelper småbedrifter å vokse.
           </p>
+
+          <!-- Call to action -->
           <div class="hero-buttons">
             <a href="#tjenester" class="knapp">Se tjenester</a>
             <a href="#kontakt" class="knapp knapp-lys">Prat med oss</a>
@@ -36,7 +60,9 @@
       </div>
     </header>
 
+    <!-- Banner med bakgrunnsbilde -->
     <section class="banner-med-bilde">
+      <!-- Overlay for bedre lesbarhet -->
       <div class="banner-overlay">
         <div class="container">
           <h2>Din digitale suksess er vårt oppdrag.</h2>
@@ -45,53 +71,56 @@
       </div>
     </section>
 
+    <!-- Tjenester -->
     <section id="tjenester" class="tjenester">
       <div class="container">
+        <!-- Gjenbrukbar seksjonstittel -->
         <div class="seksjon-tittel">
           <h2>Våre Tjenester</h2>
           <p>Alt du trenger for å bli synlig på nett</p>
         </div>
 
+        <!-- Grid-layout -->
         <div class="tjeneste-grid">
+          <!-- Tjenestekort -->
           <div class="kort">
             <div class="ikon">🌐</div>
             <h3>Nettsider</h3>
-            <p>
-              Moderne og mobilvennlige nettsider skreddersydd for din bedrift.
-            </p>
+            <p>Moderne og mobilvennlige nettsider.</p>
           </div>
+
           <div class="kort">
             <div class="ikon">📧</div>
             <h3>E-postoppsett</h3>
-            <p>
-              Profesjonell e-postadresse (navn@bedrift.no) som skaper tillit.
-            </p>
+            <p>Profesjonell e-post for bedrifter.</p>
           </div>
+
           <div class="kort">
             <div class="ikon">⚡</div>
             <h3>Support</h3>
-            <p>
-              Vi hjelper deg med drift og vedlikehold så du kan fokusere på
-              jobben.
-            </p>
+            <p>Drift og vedlikehold.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Kontaktseksjon -->
     <section id="kontakt" class="kontakt-seksjon">
       <div class="container">
         <div class="seksjon-tittel">
           <h2>Kontakt oss</h2>
-          <p>Klar for å oppgradere bedriften? Send oss en melding.</p>
+          <p>Send oss en melding.</p>
         </div>
 
+        <!-- Kontaktskjema -->
         <form id="kontaktSkjema">
+          <!-- To felt på én rad -->
           <div class="skjema-rad">
             <input type="text" id="navn" placeholder="Ditt navn" required />
             <input type="email" id="epost" placeholder="Din e-post" required />
           </div>
 
+          <!-- Meldingsfelt -->
           <textarea
             id="melding"
             rows="5"
@@ -104,29 +133,43 @@
       </div>
     </section>
 
+    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="footer-innhold">
+          <!-- Bedriftsinfo -->
           <div class="footer-info">
             <h3>AM Digital Solutions</h3>
             <p>Org.nr: 999 888 777 MVA</p>
-            <p class="gdpr-info">Vi behandler data i samsvar med GDPR-loven.</p>
+
+            <!-- Juridisk info -->
+            <p class="gdpr-info">GDPR-samsvar.</p>
           </div>
+
+          <!-- Kontaktinfo -->
           <div class="footer-kontakt">
             <p><strong>E-post:</strong> kontakt@digitalsolutions.no</p>
             <p><strong>Telefon:</strong> +47 99 88 77 66</p>
           </div>
         </div>
+
+        <!-- Footer bunn -->
         <div class="footer-bunn">
-          <p>&copy; 2026 Digital Solutions. Alle rettigheter reservert.</p>
+          <p>&copy; 2026 Digital Solutions.</p>
         </div>
       </div>
     </footer>
 
+    <!-- AI: Modal for innlogging og registrering -->
     <div id="loginModal" class="modal">
       <div class="modal-content">
+        <!-- Lukkeknapp -->
         <span class="lukk-modal">&times;</span>
+
+        <!-- AI: Endres dynamisk med JavaScript -->
         <h2 id="modalTittel">Logg inn</h2>
+
+        <!-- AI: Login/registreringsskjema koblet mot Supabase -->
         <form id="loginSkjema">
           <input type="email" id="loginEpost" placeholder="E-post" required />
           <input
@@ -138,15 +181,18 @@
           <button type="submit" class="knapp" id="submitBtn">Logg inn</button>
         </form>
 
+        <!-- AI: Bytter mellom login og registrering -->
         <p class="bytt-modus-tekst">
           <span id="byttTekst">Har du ikke bruker?</span>
           <a href="#" id="byttModusLenke">Registrer deg her</a>
         </p>
 
+        <!-- AI: Viser feilmeldinger og status -->
         <p id="loginMelding"></p>
       </div>
     </div>
 
+    <!-- JavaScript for logikk og interaktivitet -->
     <script src="script.js"></script>
   </body>
 </html>

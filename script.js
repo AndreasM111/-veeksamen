@@ -176,8 +176,8 @@ if (kontaktSkjema) {
     const orginalTekst = knapp.innerText;
     knapp.innerText = "Sender...";
 
-    // Send til Supabase (Tabellnavn: 'meldinger')
-    const { error } = await sb.from("meldinger").insert({
+    // Send til Supabase (Tabellnavn: 'messages')
+    const { error } = await sb.from("messages").insert({
       navn: navn,
       epost: epostForm,
       melding: melding,

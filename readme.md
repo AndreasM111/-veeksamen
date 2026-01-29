@@ -1,25 +1,32 @@
-# Digital Solutions
+# Digital Solutions - Webutvikling Eksamen
 
-Dette prosjektet er en nettside utviklet for eksamen i webutvikling. Nettsiden er en landingsside for en fiktiv bedrift som tilbyr IT-tjenester.
+Dette repoet inneholder en ferdigstilt webtjeneste utviklet over en periode på 5 uker. Prosjektet er en "Single Page Application" (SPA) for en fiktiv bedrift, med fokus på desktop-bruk, databaseintegrasjon og dynamisk innhold.
 
-Nettsiden kan sees her: [LIM INN DIN GITHUB PAGES LENKE HER]
+🌐 **Nettsiden kan sees live her:** [LIM INN GITHUB PAGES LINKEN DIN HER]
 
-## Teknologier
+## 🛠 Teknologier
 
-- HTML5
-- CSS (Flexbox og responsivt design)
-- JavaScript
-- Supabase (Database)
+- **HTML5:** Semantisk oppbygging.
+- **CSS3:** Desktop-first design med fast bredde for optimal visning på store skjermer.
+- **JavaScript (ES6):** Håndterer logikk for innlogging, registrering og kontaktskjema.
+- **Supabase (Backend):** \* Autentisering (Innlogging/Registrering)
+  - Database (Lagring av henvendelser)
 
-## Funksjonalitet
+## ✨ Funksjonalitet
 
-- Nettsiden tilpasser seg mobil, nettbrett og PC.
-- Kontaktskjemaet nederst på siden er koblet til en database.
-- Når en bruker sender inn skjemaet, lagres navn, e-post og melding i Supabase-tabellen "meldinger".
+1.  **Backend-integrasjon:** Full kobling mot Supabase API.
+2.  **Autentisering:** Brukere kan registrere seg og logge inn. Menyen endrer seg dynamisk ("Logg inn" -> "Logg ut") basert på session-status.
+3.  **Kontaktskjema:** Meldinger sendes direkte til database-tabellen `messages`.
+4.  **Desktop Design:** Et bredt og oversiktlig design tilpasset bedriftsmarkedet på PC/Mac.
 
-## Oppsett
+## 🚀 Installasjon og kjøring
 
-Prosjektet bruker Supabase som backend. Koden kobler seg til API-et via JavaScript for å lagre henvendelser trygt.
+Siden prosjektet bruker CDN for Supabase, trenger man ikke installere `node_modules`.
 
-Laget av: Andreas
-Dato: Januar 2026
+1.  Klon repoet.
+2.  Åpne `index.html` i en nettleser.
+
+## 👤 Utvikler
+
+Navn: Andreas
+Periode: 5 uker (Vår 2026)

@@ -1,10 +1,11 @@
-/* Grunninnstillinger */
+/* LAYOUT: Nullstiller standard marger og sikrer riktig breddeberegning */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* DESIGN: Lagrer farger i variabler for gjenbruk (AI-forslag til fargepalett) */
 :root {
   --hoved-blaa: #004a99;
   --mork-graa: #222;
@@ -12,6 +13,7 @@
   --tekst-farge: #333;
 }
 
+/* TYPOGRAFI & LAYOUT: Setter font og låser siden til Desktop-bredde */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -20,16 +22,18 @@ body {
   min-width: 1100px;
 }
 
+/* LAYOUT: Sentrerer innholdet midt på skjermen */
 .container {
   width: 1100px;
   margin: auto;
 }
 
-/* Navigasjon */
+/* NAVIGASJON: Sticky header som følger med når man scroller */
 nav {
   height: 80px;
   background: #fff;
   border-bottom: 1px solid #eee;
+  /* FLEXBOX: Brukes for å styre layout */
   display: flex;
   align-items: center;
   position: sticky;
@@ -37,12 +41,14 @@ nav {
   z-index: 1000;
 }
 
+/* FLEXBOX: Plasserer logo til venstre og meny til høyre (Space-between) */
 nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* DESIGN: Styling av logo */
 .logo {
   font-size: 24px;
   font-weight: bold;
@@ -52,6 +58,7 @@ nav .container {
   color: var(--hoved-blaa);
 }
 
+/* FLEXBOX: Legger menypunktene på rekke */
 nav ul {
   display: flex;
   list-style: none;
@@ -68,7 +75,7 @@ nav a {
   font-weight: bold;
 }
 
-/* Hero Seksjon */
+/* DESIGN: Hero-seksjon med grå bakgrunn */
 .hero {
   padding: 80px 0;
   background-color: var(--lys-graa);
@@ -96,7 +103,7 @@ nav a {
   margin-top: 30px;
 }
 
-/* Banner med bilde og slagord */
+/* AI-HJELP: Bakgrunnsbilde hentet via URL (Unsplash) */
 .banner-med-bilde {
   background: url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80")
     no-repeat center center/cover;
@@ -106,6 +113,7 @@ nav a {
   text-align: center;
 }
 
+/* UX: Mørkt filter (Overlay) for å gjøre hvit tekst lesbar */
 .banner-overlay {
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
@@ -135,7 +143,7 @@ nav a {
   opacity: 0.9;
 }
 
-/* Knapper */
+/* UI: Knappestyling */
 .knapp {
   display: inline-block;
   background: var(--hoved-blaa);
@@ -156,7 +164,7 @@ nav a {
   margin-left: 10px;
 }
 
-/* Tjenester */
+/* SECTION: Tjenester */
 .tjenester {
   padding: 80px 0;
 }
@@ -166,12 +174,14 @@ nav a {
   margin-bottom: 40px;
 }
 
+/* FLEXBOX: Grid-system for tjenestekortene */
 .tjeneste-grid {
   display: flex;
   gap: 20px;
   margin-top: 40px;
 }
 
+/* FLEXBOX: 'flex: 1' gjør at alle kortene får like stor bredde */
 .kort {
   background: #fff;
   padding: 30px;
@@ -185,12 +195,13 @@ nav a {
   margin-bottom: 15px;
 }
 
-/* Kontaktskjema styling */
+/* SECTION: Kontaktskjema */
 .kontakt-seksjon {
   padding: 80px 0;
   background-color: #f4f7f6;
 }
 
+/* AI-HJELP: Box-shadow (skygge) generert for dybdeeffekt */
 #kontaktSkjema {
   background: #fff;
   padding: 40px;
@@ -200,12 +211,14 @@ nav a {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
+/* FLEXBOX: Legger input-feltene (navn/epost) på samme rad */
 .skjema-rad {
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
 }
 
+/* UI: Styling av input-felter */
 #kontaktSkjema input,
 #kontaktSkjema textarea {
   width: 100%;
@@ -235,13 +248,14 @@ nav a {
   font-size: 18px;
 }
 
-/* Footer */
+/* FOOTER: Mørk bakgrunn med hvit tekst */
 footer {
   background: var(--mork-graa);
   color: #fff;
   padding: 40px 0 20px 0;
 }
 
+/* FLEXBOX: Deler footer-innholdet i to sider */
 .footer-innhold {
   display: flex;
   justify-content: space-between;
@@ -261,9 +275,9 @@ footer {
   color: #888;
 }
 
-/* Login Modal Styling */
+/* AI-HJELP: CSS for Modal (Popup). 'Fixed' posisjonering og Z-index */
 .modal {
-  display: none;
+  display: none; /* Skjult som standard */
   position: fixed;
   z-index: 2000;
   left: 0;
@@ -275,6 +289,7 @@ footer {
   justify-content: center;
 }
 
+/* DESIGN: Selve popup-boksen */
 .modal-content {
   background-color: #fff;
   padding: 40px;
@@ -298,6 +313,7 @@ footer {
   border-radius: 5px;
 }
 
+/* Lukkeknapp (X) */
 .lukk-modal {
   position: absolute;
   top: 10px;
@@ -317,7 +333,7 @@ footer {
   font-size: 14px;
 }
 
-/* Ny styling for bytt-modus lenken nederst i modalen */
+/* UI: Linker nederst i modalen */
 .bytt-modus-tekst {
   margin-top: 20px;
   font-size: 14px;
